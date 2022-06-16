@@ -8,19 +8,29 @@ exports = typeof window === 'undefined' ? global : window;
  */
 
 exports.bestPracticesAnswers = {
+  /**
+   * You should avoid global variables.
+   *
+   */
   globals: function() {
-    myObject = {
+    return {
       name: 'Jory'
     };
-
-    return myObject;
   },
 
+  /**
+   * You should use parseInt correctly.
+   *
+   */
   parseInt: function(num) {
-    return parseInt(num);
+    return parseInt(num, 10);
   },
 
+  /**
+   * You should understand strict comparison.
+   *
+   */
   identity: function(val1, val2) {
-
+    return val1 === val2;
   }
 };
