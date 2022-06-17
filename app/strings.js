@@ -1,6 +1,5 @@
 exports = typeof window === 'undefined' ? global : window;
 
-const isString = (str) => typeof str === 'string';
 const isNumber = (num) => typeof num === 'number';
 
 exports.stringsAnswers = {
