@@ -67,9 +67,9 @@ exports.arraysAnswers = {
       return null;
     }
 
-    arr.forEach((element, index)=>{
+    arr.forEach((element, index) => {
       if (element === item) {
-        arr.splice(index, index+1);
+        arr.splice(index, index + 1);
       }
     });
 
@@ -182,7 +182,9 @@ exports.arraysAnswers = {
       return null;
     }
 
-    return arr.filter(itemArr => itemArr === item).length;
+    const filterArr = arr.filter(itemArr => itemArr === item);
+
+    return filterArr.length;
   },
 
   /**

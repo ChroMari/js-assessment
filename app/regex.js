@@ -56,7 +56,7 @@ exports.regexAnswers = {
   captureThreeNumbers: function(str) {
     if (!isString(str)) return false;
 
-    const number = /[0-9]{3}/g.exec(str);
+    const number = /\d{3}/g.exec(str);
 
     return (number != null) ? number[0] : false;
   },
@@ -71,7 +71,7 @@ exports.regexAnswers = {
   matchesPattern: function(str) {
     if (!isString(str)) return null;
 
-    const reg = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
+    const reg = /^\d{3}-\d{3}-\d{4}$/;
 
     return reg.test(str);
   },
@@ -86,8 +86,8 @@ exports.regexAnswers = {
   isUSD: function(str) {
     if (!isString(str)) return null;
 
-    const strInt = /^\$[0-9]{1,3},[0-9]{3},[0-9]{3}$/.test(str);
-    const strFloat = /^\$[0-9]{1,3}(,[0-9]{3})*\.[0-9]{2}$/.test(str);
+    const strInt = /^\$\d{1,3},\d{3},\d{3}$/.test(str);
+    const strFloat = /^\$\d{1,3}(,\d{3})*\.\d{2}$/.test(str);
 
     return strInt ? true : strFloat;
   }

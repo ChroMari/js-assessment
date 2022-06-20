@@ -8,6 +8,7 @@ exports.numbersAnswers = {
    *    128, 8 => 1
    */
   valueAtBit: function(num, bit) {
+    if (typeof num !== 'number') return null;
 
     const strTwo = num.toString(2);
     const len = strTwo.length;
@@ -32,7 +33,10 @@ exports.numbersAnswers = {
    *   128 => '10000000'
    */
   convertToBinary: function(num) {
+    if (typeof num !== 'number') return null;
+
     const numTwo = num.toString(2);
+
     return '0'.repeat(8 - numTwo.length) + num.toString(2);
   },
 

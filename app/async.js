@@ -6,7 +6,7 @@ exports.asyncAnswers = {
    *
    */
   async: function(value) {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function(resolve, _) {
       return resolve(value);
     });
   },
@@ -16,12 +16,14 @@ exports.asyncAnswers = {
    *
    */
   manipulateRemoteData: function(url) {
+    if (typeof url !== 'string' || url.length === 0) return null;
+
     return fetch(url)
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(datas) {
-        return datas.people.map(data => data.name).sort();
+      .then(response => response.json())
+      .then(({people}) => {
+        const names = people.map(data => data.name);
+
+        return names.sort();
       });
   }
 };

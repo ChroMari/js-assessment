@@ -21,7 +21,7 @@ exports.countAnswers = {
       }
     },0);
 
-    this.cancel = function() {
+    this.cancel = () => {
       clearTimeout(idTimer);
     };
 

@@ -14,7 +14,7 @@ exports.bestPracticesAnswers = {
    */
   globals: function() {
     return {
-      name: 'Jory'
+      name: 'Jory',
     };
   },
 

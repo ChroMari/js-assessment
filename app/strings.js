@@ -11,7 +11,7 @@ exports.stringsAnswers = {
    *   'aaaabbbb' => 'ab'
    */
   reduceString: function(str, amount) {
-    if (!isString(str) && !isNumber(amount)) return null;
+    if (typeof str !== 'string' && !isNumber(amount)) return null;
 
     let resultStr = '';
     let count = 0;
@@ -36,7 +36,7 @@ exports.stringsAnswers = {
    *   'abcdef abcde abc def' => 'abcdef\nabcde\nabc\ndef'
    */
   wordWrap: function(str, cols) {
-    if (!isString(str) && !isNumber(cols)) return null;
+    if (typeof str !== 'string' && !isNumber(cols)) return null;
 
     const arr = str.split(' ');
     let result = arr[0];
@@ -59,7 +59,7 @@ exports.stringsAnswers = {
    *   'i am a string of characters' => 'sretcarahc fo gnirts a ma i'
    */
   reverseString: function(str) {
-    if (!isString(str)) return null;
+    if (typeof str !== 'string') return null;
 
     return str.split('').reverse().join('');
   }

@@ -34,9 +34,7 @@ exports.functionsAnswers = {
    *
    */
   functionFunction: function(str) {
-    return function(str2) {
-      return `${str}, ${str2}`;
-    }
+    return str2 => `${str}, ${str2}`;
   },
 
   /**
@@ -64,7 +62,7 @@ exports.functionsAnswers = {
    *
    */
   useArguments: function() {
-    return [...arguments].reduce((res, item) => res += item);
+    return [...arguments].reduce((res, item) => res + item);
   },
 
   /**
